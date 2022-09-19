@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html>
+<title>Software Requirements Specification</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  @media print{
+  body * {
+  visibility:hidden;
+  }
+  .print-container, .print-container *{
+  visibility: visible;
+  }
+  }
+  @media screen{
+  .print-container{
+  margin-left:165px
+  }
+  .content-table{
+    display: none;
+  }
+  
+}
+p{
+font-style: normal;
+font-weight: normal;
+}
+h3{
+  font-weight: bold;
+}
+.content-table p{
+  text-align: right;
+  margin-top: -30px;
+}
+.list{
+  margin-top: -15px;
+  margin-left:10px;
+}
+  </style>
+
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-green w3-card" style="width:160px;">
+
+<a href="#Software Requirements Specification" class="w3-bar-item w3-button">Software Requirements Specification</a>
+
+<h3 class="w3-bar-item">Table of Contents</h3>
+
+  
+  <div> 
+  <a class="w3-bar-item w3-button" onclick="myAccFunc('demoAcc')" 
+  href="#introduction">1. Introduction<i class="fa fa-caret-down"></a></i> </div>
+  <div id="demoAcc" class="w3-hide w3-white w3-card-4">
+    <a href="#Purpose" class="w3-bar-item w3-button">1.1 Purpose</a>
+    <a href="#Document Conventions" class="w3-bar-item w3-button">1.2 Document Conventions</a>
+    <a href="#Intended Audience and Reading Suggestions" class="w3-bar-item w3-button">1.3 Intended Audience and Reading Suggestions</a>
+    <a href="#Product Scope" class="w3-bar-item w3-button">1.4 Product Scope</a>
+    <a href="#References" class="w3-bar-item w3-button">1.5 References</a>
+  </div>
+  
+  
+  <div>
+  <a class="w3-bar-item w3-button" onclick="myAccFunc('demoAcc1')"
+  href="#Overall Description">2. Overall Description<i class="fa fa-caret-down"></a></i></div>
+  <div id="demoAcc1" class="w3-hide w3-white w3-card-4">
+    <a href="#Product Perspective" class="w3-bar-item w3-button">2.1 Product Perspective</a>
+    <a href="#Product Functions" class="w3-bar-item w3-button">2.2 Product Functions</a>
+    <a href="#User Classes" class="w3-bar-item w3-button">2.3 User Classes and Characteristics</a>
+    <a href="#Operating Environment" class="w3-bar-item w3-button">2.4 Operating Environment</a>
+    <a href="#Design Implementation" class="w3-bar-item w3-button">2.5 Design and Implementation Constraints</a>
+    <a href="#User Documentation" class="w3-bar-item w3-button">2.6 User Documentation</a>
+    <a href="#Assumptions Dependencies" class="w3-bar-item w3-button">2.7 Assumptions and Dependencies</a>
+  </div>
+  
+  <div>
+  <a class="w3-bar-item w3-button" onclick="myAccFunc('demoAcc2')"
+   href="#External Interface Requirements">3. External Interface Requirements<i class="fa fa-caret-down"></a></i></div>
+  <div id="demoAcc2" class="w3-hide w3-white w3-card-4">
+    <a href="#" class="w3-bar-item w3-button">3.1 User Interfaces</a>
+    <a href="#" class="w3-bar-item w3-button">3.2 Hardware Interfaces</a>
+    <a href="#" class="w3-bar-item w3-button">3.3 Software Interfaces</a>
+    <a href="#" class="w3-bar-item w3-button">3.4 Communications Interfaces</a>
+  </div>
+  
+
+  <div>
+  <a class="w3-bar-item w3-button" onclick="myAccFunc('demoAcc3')"
+  href="#System Features">4. System Features<i class="fa fa-caret-down"></a></i></div>
+
+  <div id="demoAcc3" class="w3-hide w3-white w3-card-4">
+    <a href="#System Feature 1" class="w3-bar-item w3-button">4.1 System Feature 1</a>
+    <a href="#System Feature 2" class="w3-bar-item w3-button">4.2 System Feature 2</a>
+    <a href="#System Feature 3" class="w3-bar-item w3-button">4.3 System Feature 3</a> 
+  </div>
+  
+
+  <div> 
+  <a class="w3-bar-item w3-button" onclick="myAccFunc('demoAcc4')"
+  href="#Other Nonfunctional Requirements">5. Other Nonfunctional Requirements<i class="fa fa-caret-down"></a></i></div>
+
+  <div id="demoAcc4" class="w3-hide w3-white w3-card-4">
+    <a href="#Performance Requirements" class="w3-bar-item w3-button">5.1 Performance Requirements</a>
+    <a href="#Safety Requirements" class="w3-bar-item w3-button">5.2 Safety Requirements</a>
+    <a href="#Security Requirements" class="w3-bar-item w3-button">5.3 Security Requirements</a>
+    <a href="#Software Quality Attributes" class="w3-bar-item w3-button">5.4 Software Quality Attributes</a>
+    <a href="#Business Rules" class="w3-bar-item w3-button">5.5 Business Rules</a>
+  </div>
+  
+
+  <a href="#Other Requirements" class="w3-bar-item w3-button">6. Other Requirements</a>
+  <a href="#Appendix A: Glossary" class="w3-bar-item w3-button">Appendix A: Glossary</a>
+  <a href="#Appendix B: Analysis Models" class="w3-bar-item w3-button">Appendix B: Analysis Models</a>
+  <a href="#Appendix C: To Be Determined List" class="w3-bar-item w3-button">Appendix C: To Be Determined List</a>
+  
+</div>  
+
+<div class="print-container">
+
+<div class="w3-container">
+
+<a name="Software Requirements Specification"></a>
+    <h1 style="text-align:right;"><b> Software Requirements Specification</b> </h1>
+    <h3 style="text-align:right;"><b>for</b> </h3>
+    <br><h1 style="text-align:right;"><b>Virtual ClassRoom</b></h1>
+    <br><h3 style="text-align:right;"><b>Version 1.0 approved<b /></h3>
+    <br><h3 style="text-align:right;"><b>Prepared by</b></h3>
+    <h4 style="text-align:right;">
+      <li>Abdullah Al Mahfug 1821861642</li>
+      <li>Nihal Hossain 1813165042</li>
+      <li>Khaja Sabik Ahmed 1812968042</li>
+      <li>Abu Tareq 1821780642</li>
+    </h4>
+    <br><h3 style="text-align:right;"><b> 18 July, 2021.</b></h3>
+    <br>
+    <br>
+    <br>
+    <br> 
+	<br>
+    <br>
+	<br>
+  <br>
+  <br>
+  <br>
+  <br>
+<br>
+<br>
+<br>
+	<footer>
+  <p style="text-align: center;
+  padding: 3px;
+  background-color: white;
+  color: gray; font-size:1vw"><i>Copyright © 1999 by Karl E. Wiegers. Permission is granted to use, modify, and distribute this document.</i></p>
+</footer>
+</div>
+
+<div class="w3-container content-table">
+  <h1><b>Table of contents</b></h1>
+  <h4><b>Table of contents <p>ii</p></b></p></h4>
+  <br>
+  <h4><b>Revision history <p>ii</p></b></p></h4>
+  <br>
+  <h4><b>1.Introduction <p>3</p></b></p></h4>
+  <br>
+  <div class="list">
+   <h6>1.1 Purpose<p>3</p></h6>
+   <h6>1.2 Document Conventions<p>3</p></h6>
+   <h6>1.3 Intended Audience and Reading Suggestions<p>3</p></h6>
+   <h6>1.4 Product Scope<p>4</p></h6>
+   <h6>1.5 References<p>4</p></h6>
+  </div>
+  <h4><b>2.Overall Description <p>4</p></b></p></h4>
+  <br>
+  <div class="list">
+   <h6>2.1 Product Perspective<p>4</p></h6>
+   <h6>2.2 Product Functions<p>4</p></h6>
+   <h6>2.3 User Classes and Characteristics<p>5</p></h6>
+   <h6>2.4 Operating Environment<p>5</p></h6>
+   <h6>2.5 Design and Implementation Constraints<p>5</p></h6>
+   <h6>2.6 User Documentation<p>5</p></h6>
+   <h6>2.7 Assumptions and Dependencies<p>6</p></h6>
+  </div>
+  <h4><b>3. External Interface Requirements <p>6</p></b></p></h4>
+  <br>
+  <div class="list">
+   <h6>3.1 User Interfaces<p>6</p></h6>
+   <h6>3.2 Hardware Interfacess<p>7</p></h6>
+   <h6>3.3 Software Interfaces<p>7</p></h6>
+   <h6>3.4 Communications Interfaces<p>8</p></h6>
+  </div>
+  <h4><b>4. System Features <p>8</p></b></p></h4>
+  <br>
+  <div class="list">
+   <h6>4.1 System Feature 1<p>8</p></h6>
+   <h6>4.2 System Feature 2 (and so on)<p>12</p></h6>
+  </div>
+  <h4><b>5. Other Nonfunctional Requirements <p>19</p></b></p></h4>
+  <br>
+  <div class="list">
+   <h6>5.1 Performance Requirements<p>19</p></h6>
+   <h6>5.2 Safety Requirements<p>20</p></h6>
+   <h6>5.3 Security Requirements<p>20</p></h6>
+   <h6>5.4 Software Quality Attributes<p>20</p></h6>
+   <h6>5.5 Business Rules<p>20</p></h6>
+  </div>
+  <h4><b>6. Other Requirements <p>20</p></b></p></h4>
+  <h4><b>Appendix A: Glossary <p>21</p></b></p></h4>
+  <h4><b>Appendix B: Analysis Models <p>21</p></b></p></h4>
+  <h4><b>Appendix C: To Be Determined List <p>21</p></b></p></h4>
+
+</div>
+<div class="w3-container" id="introduction">
+  <a name="Introduction"></a>
+  <h1><b>1. Introduction</b></h1>
+  <a name="Purpose"></a>
+  <h3>1.1 Purpose</h3>
+<p>This project aims to track the reading progress of students.It will be a virtual classroom where professors and students may communicate with one another and express their questions and concerns through an online platform. Using this application,students can finish their reading task in time. It will explain the system's aim and features, as well as the system's interfaces, what the system will do, the constraints under which it must operate, and how the system will react to various stimulation. This paper is meant for both the system's administrators and developers, and it has been submitted to the appropriate Faculty for approval.  </p>
+
+<br>
+<a name="Document Conventions"></a>
+    <h3>1.2 Document Conventions</h3>
+  <p>Prioritize each and every requirement statement. </p>
+  
+<br>
+<a name="Intended Audience and Reading Suggestions"></a>
+  <h3>1.3 Intended Audience and Reading Suggestions</h3>
+<p>This paper is for both administrators and device developers, and it will be submitted to the proper Faculty for approval.
+  This document will also help the owning organization to get basic ideas on the functionality of the project. Chapter 2 of this document contains details of the project functions, users and classes, operating environment, user documentations etc. Chapter 3 contains details regarding the external interface requirements, user interfaces, hardware interfaces. Chapter 4 discusses the system features and Chapter 5 talks about all the non functional requirements. </p>
+
+<br>
+<a name="Product Scope"></a>
+  <h3>1.4 Product Scope</h3>
+<p>This software tracks the reading progress of students.This system will be designed to communicate with professors and students in a virtual classroom. It will offer easy and straightforward Instructions for the new users. Additionally, the virtual classroom will be able to generate a unique class code for the system. Students can join a classroom using class code.Teacher can upload reading material in the class with a deadline. Students have to read the material in a given time. Teachers can track their student reading activity with the help of facial recognition.
+</p>
+
+<br>
+<a name="References"></a>
+  <h3>1.5 References</h3>
+  <table>
+    <tr>
+      <td>Django </td>
+      <td><a href="https://docs.djangoproject.com/en/3.1/" target=blank>https://docs.djangoproject.com/en/3.1/</a> </td>
+
+    </tr>
+    <tr>
+      <td>Android</td>
+      <td><a href="https://developer.android.com/" target=blank>https://developer.android.com/</a> </td>
+    </tr>
+    <tr>
+      <td>MYSQL</td>
+      <td><a href="https://dev.mysql.com/doc/" target=blank>https://dev.mysql.com/doc/</a> </td>
+    </tr>
+    <tr>
+      <td>HTML & CSS</td>
+      <td><a href="https://www.w3schools.com/html/html_css.asp" target=blank>https://www.w3schools.com/html/html_css.asp</a></td>
+    </tr>
+  </table>
+
+</div>
+<div class="w3-container">
+<a name="Overall Description"></a>
+    <h1><b>2. Overall Description</b></h1>
+    <a name="Product Perspective"></a>
+
+    <h3>2.1 Product Perspective</h3>
+    <p>The application will be a web based classroom where teachers can track the reading progress of students. Teachers can create classes.
+       Then the teacher can send class code to the students.Student can join the classroom using the class code.
+        Teachers can upload reading material which students can see and can ask questions in different ways.Teacher can see the asked question in a suitable interface.
+         Teachers can also review student reading activity in the review reading material section. Student can see reading task and deadline of a particular class but also as a unified class using ‘Reading task and deadline’ section.</p>
+    <br>
+
+    <a name="Product Functions"></a>
+    <h3>2.2 Product Functions</h3>
+
+    <ul>
+      <li>User Registration.</li>
+      <li>User Login .</li>
+      <li>Login with Google account.</li>
+      <li>Create class.</li>
+      <li>Join class</li>
+      <li>Invite code sent via email.</li>
+      <li>Reading Material post with dead line Create Folders</li>
+      <li>Add question-text with page no</li>
+      <li>Reading Material view(pdf view) with zoom in, zoom out, next/previous page</li>
+      <li>Add question-Audio with page no</li>
+      <li>Add question-highlight text with page no</li>
+      <li>Teacher question view-document view <ol>
+		i)Question will be shown in page under the highlight text. 
+	  </ol></li>
+	  <li>List view<ol>
+	  i) Question list in a page</ol>
+	  </li>
+	  <li>Question filtering like all students or specific students etc</li>
+	  <li>Capture image in an interval time with page no</li>
+	  <li>Reading review-student face recognition</li>
+	  <li>Track reading task complete with time or not</li>
+    </ul>
+    <br>
+
+    <a name="User Classes"></a>
+    <h3>2.3 User Classes and Characteristics</h3>
+    <table border='1' style='border-collapse:collapse'>
+      <tr>
+        <th>Teacher</th>
+        <th>Student</th>
+        <th>System</th>
+      </tr>
+      <tr>
+        <td>Can create class,View question list,Send Class Code,
+          Assign reading material,
+          See tagged question of a particular parts of the material,
+          ,See all question of a page in material
+          ,Filter question
+          ,Reading review
+          </td>
+        <td>Join class,Add question,Read material
+          ,See reading task and deadline of a particular class, but also as a unified lis
+          </td>
+        <td>Authentication,send class code, push notifications,capture student image,Face recognition</td>
+      </tr>
+      
+    </table>
+    <br>
+    <a name="Operating Environment"></a>
+    <h3>2.4 Operating Environment</h3>
+    <p>The entire system is going to exist on a web application and there will also be an android application. To access the application user must ensure that he/she has access to a computer or mobile device and that internet access. </p>
+    <br>
+
+	<br>
+
+  <a name="Design Implementation"></a>
+    <h3>2.5 Design and Implementation Constraints</h3>
+    <ol>
+      <li>We have to finish the project in 3 month</li>
+      <li>Student has to give his/her recent photograph in signup</li>
+      <li>Reading material should be pdf file</li>
+      <li>Students should be able to zoom in and out in the material</li>
+      <li>Only alpha and numeric keys are allowed in the password field</li>
+    </ol>
+	<br>
+
+	<br>
+
+  <a name="User Documentation"></a>
+    <h3>2.6 User Documentation</h3>
+    <table>
+      <tr>
+        <td>Django </td>
+        <td><a href="https://docs.djangoproject.com/en/3.1/" target=blank>https://docs.djangoproject.com/en/3.1/</a> </td>
+
+      </tr>
+      <tr>
+        <td>OpenCV</td>
+        <td><a href="https://docs.opencv.org/4.5.2/" target=blank>https://docs.opencv.org/4.5.2/</a> </td>
+      </tr>
+      <tr>
+        <td>Rest API</td>
+        <td><a href="https://www.django-rest-framework.org/" target=blank>https://www.django-rest-framework.org/</a> </td>
+      </tr>
+      <tr>
+        <td>HTML & CSS</td>
+        <td><a href="https://www.w3schools.com/html/html_css.asp" target=blank>https://www.w3schools.com/html/html_css.asp</a></td>
+      </tr>
+      <tr>
+        <td>mysql</td>
+        <td><a href="https://dev.mysql.com/doc/" target=blank>https://dev.mysql.com/doc/</a></td>
+      </tr>
+      <tr>
+        <td>Bootstrap</td>
+        <td><a href="https://getbootstrap.com/docs/4.1/" target=blank>https://getbootstrap.com/docs/4.1/</a></td>
+      </tr>
+      <tr>
+        <td>pdf.js API</td>
+        <td><a href="https://mozilla.github.io/pdf.js/" target=blank>https://mozilla.github.io/pdf.js/</a></td>
+      </tr>
+      <tr>
+        <td>JavaScript</td>
+        <td><a href="https://devdocs.io/javascript/" target=blank>https://devdocs.io/javascript/</a></td>
+      </tr>
+    
+    </table>
+    <br>
+	
+	<br>
+
+  <a name="Assumptions Dependencies"></a>
+
+    <h3>2.7 Assumptions and Dependencies</h3>
+    <p>We are assuming that all users will have access to a computer device or mobile phone to use the system.</p>
+  </div>
+    <br>
+
+  <br>
+  <div class="w3-container">
+  <a name="External Interface Requirements"></a>
+    <h1><b>3. External Interface Requirements</b></h1>
+    <a name="User Interfaces"></a>
+    <h3>3.1 User Interfaces</h3>
+	<p> 
+    <br><b>1. Sign In page:</b> Users will be greeted by a sign-in page where he/she can either sign-in. If the user doesn’t log in when he/she tries to open the home page then the sign in page will be shown . Users need to give an email and password to sign in.There are two different buttons in the sign in page: i)Sign in as Teacher ii)Sign in as Student. Teacher have to sign in system through the ‘Sign in as Teacher’ button and student also use the ‘Sign as student’ button to sign in
+    <br><br><b>2. Sign up page:</b> Teacher or student need to register in the system if they are open the system for the very first time. They have to give some information to sign up, Student have to give their recent photographs. After the sign up system redirects to the sign in page to sign in.
+    <br><br><b>3. Home page:</b> After the sign in, teacher or student redirect to the home page. If student joined some classes he/she will see the list of classes with ‘go to class’ button. If teacher created sme classes he/she will also see the list of classes with ‘go to class’ button. Student can see reading task and deadline of a particular class but also as a unified class using ‘Reading task and deadline’ button
+    <br><br><b>4. Create class:</b> Teacher can create class using the ‘create class’ button . Create class button will show when teacher clicks the plus button form the navbar. When teacher clicks create class button, a form will be pop up. Teacher has to give the class room information in the form and click the ‘create’ button. A class will be created with unique class code in the background and link to the teacher id. Then a ‘create class successfully’ notification will show in the home page and teacher can see his/her created class.
+    <br><br><b>5. Joined class:</b>  Student can join a class using the ‘join class’ button . Join class button will show when student clicks the plus button form the navbar. When student clicks create class button, a form will be pop up to enter the class code, student has to give the class code in the form and press the ‘join’ button. Then student can join the class if class code is valid or a ‘no class found’ notification will show in home page. After join a class room, student can see his/her joined class room in the home page.
+    <br><br><b>6. Class room page:</b> Teacher or student can view the class room page using ‘go to class’ button. In the class room page teacher or student can see the class information. Student can not see the class code but teacher can see the class code and ‘invite student’ button. Teacher can assign material to class using ‘Assign Material to the class’ button but student can not do this.
+    
+    <br><br><b>7. Send Class code:</b>  Teacher can send the class code to the student using ‘Invite student’ button in class room page. Teacher has to give the students emails to send the class code.
+    
+    <br><br><b>8. Material view:</b> Teacher and student can view the reading material in different way. Student can zoom in and zoom out the material and add different type of question using ‘Add question’ button. Student can also mark a particular part of material.Teacher can view reading material with question list of a page and also see tagged question under the marked text.
+    
+    <br><br><b>9. Reading review:</b> Teacher can review the reading activity of a student using “Reading review’ button in material page. In reading review page , teacher can see the student images according to the page no. of material. Then, teacher can send his/her review using ‘comment’ button.
+
+    
+    </p>
+<br>
+<a name="Hardware Interfaces"></a>
+<h3>3.2 Hardware Interfaces</h3>
+<p> For the web app we are developing we need to use <b>webCam</b> and <b>phoneCam</b> in terms of student’s activity tracking. This feature is used by the system. </p>
+<br>
+<a name="Software Interfaces"></a>
+    <h3>3.3 Software Interfaces</h3>
+  <p>We will use various types of software to build the web application.</p>
+  <li>We will use various types of software to build the web application.
+    <ol>Database: mysql</ol>
+    <ol>Library: OpenCV , we need to use another library for the audio recording feature.</ol>
+    <ol>API: For working with the pdf material we are using “pdf.js” API.</ol>
+    <ol>Backend: python, django.</ol>
+    <ol>Web design: HTML, CSS, Javascript, Bootstrap</ol>
+  </li>
+<br>
+<a name="Communications Interfaces"></a>
+    <h3>3.4 Communications Interfaces</h3>
+  <p> We are building two applications on two different platforms. But we need work on the same database. For that reason, we need something that handles the job , creating a common way environment.
+    We are using <b>“Rest API”</b> to communicate with both of the platforms. Many applications rely on REST APIs to allow the front end to talk to the back end. If  we deploy an Android application, we need an API to allow Android databases to consume information from the database.
+    We might need to convert tabular format into <b>JSON</b> or <b>Serialization</b>. And in this case, we need the API.</p>
+<br>
+</div>
+  <div class="w3-container">
+  <a name="System Features"></a>
+      <h1><b>4. System Features</b></h1>
+      <a name="System Feature 1"></a>
+      <h3>4.1 Funtional Requirements 1</h3>
+    <p> <img src="./teacher use case.jpeg" alt="teacher use case" width="60%" height="60%"> </p>
+    <li>Actor: Teacher
+          <ol type="i">
+            <li> Sign in</li>
+            <li> Sign out</li>
+            <li> Create Classroom</li>
+            <li> Assign reading material</li>
+            <li> See tagged question of a particular parts of the material</li>
+            <li> See all question of a page in material</li>
+            <li> Filter question</li>
+            <li> Reading review</li>
+          </ol>
+        </li>
+
+        <h2>Expanded Use Case of Teacher Actor:</h2>
+
+        <!-- Sign in Use case : Teacher -->
+  
+        <p>  
+          Use Case: Sign in
+         <br>Actor: Teacher
+         <br>Type: Primary
+         <br>Typical Course of Events:
+       </p>
+        <table border='1' style='border-collapse:collapse'>
+          <tr>
+            <th>Actor</th>
+            <th>System Response</th>
+          </tr>
+          <tr>
+            <td>1.Teacher opens a browser and enters the particular site</td>
+            <td>2.System shows the sign in interface and prompt to enter email and password.</td>
+          </tr>
+  
+          <tr>
+            <td>3.Teacher enters email and password then clicks on Sign as teacher button.	</td>
+            <td>4.System authenticate teacher and show homepage</td>
+          </tr>
+          
+        </table>
+        <br>
+        <!-- Sign out Use case : Teacher -->
+
+      <p>  
+        Use Case: Sign out
+       <br>Actor: Teacher
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+      <table border='1' style='border-collapse:collapse'>
+        <tr>
+          <th>Actor</th>
+          <th>System Response</th>
+        </tr>
+        <tr>
+          <td>1. On the home page teacher see profile icon and clicks on it.	</td>
+          <td>2.System shows sign out button</td>
+        </tr>
+
+        <tr>
+          <td>3.Teacher clicks on Sign out  button.	</td>
+          <td>4.System accept the permission and show sign in interface</td>
+        </tr>
+        
+      </table>      
+
+            <!-- Create Classroom Use case : Teacher -->
+
+            <p>  
+              Use Case: Create ClassRoom
+             <br>Actor: Teacher
+             <br>Type: Primary
+             <br>Typical Course of Events:
+           </p>
+            <table border='1' style='border-collapse:collapse'>
+              <tr>
+                <th>Actor</th>
+                <th>System Response</th>
+              </tr>
+              <tr>
+                <td>1.After successfully signed in, on the home page, the teacher clicks on the ‘plus button’ to create class.</td>
+                <td>2.System show create class button</td>
+              </tr>
+      
+              <tr>
+                <td>3. Then the teacher clicks on the create class button.</td>
+                <td>4.System responds with an open form.</td>
+              </tr>
+      
+              <tr>
+                <td>5.Teacher fill up the form with class information and click on create button</td>
+                <td>6. System gets the infos from form ,and creates a random class code and saves this into the database. And redirect to the homepage with a class list.
+                </td>
+              </tr>
+              
+            </table>
+            <br>
+
+                  <!-- Send Class code Use case : Teacher -->
+
+      <p>  
+        Use Case: Send Class Invitation Code
+       <br>Actor: Teacher
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+      <table border='1' style='border-collapse:collapse'>
+        <tr>
+          <th>Actor</th>
+          <th>System Response</th>
+        </tr>
+        <tr>
+          <td>1.After successfully creating a classroom, teacher redirecting to the home page</td>
+          <td>2. System will show teachers classes list in home page</td>
+        </tr>
+
+        <tr>
+          <td>3. Teacher clicks the go to class button to enter the classroom</td>
+          <td>4.System will show classroom page with class information</td>
+        </tr>
+
+        <tr>
+          <td>5.Tecaher click invite student button</td>
+          <td>6.System will show a form</td>
+        </tr>
+
+        <tr>
+          <td>7.teacher will complete the form with students email and click on send button</td>
+          <td>8. System will collect the students mails and send them the class code and redirect teacher to classroom page</td>
+        </tr>
+        
+      </table>
+      <br>
+
+      <!-- Assign Reading Material Use case : Teacher -->
+
+      <p>  
+        Use Case: Assign Reading Material
+       <br>Actor: Teacher
+       <br>Type: Secondary
+       <br>Typical Course of Events:
+     </p>
+     
+     <table border='1' style='border-collapse:collapse'>
+       <tr>
+         <th>Actor</th>
+         <th>System Response</th>
+       </tr>
+       <tr>
+         <td>1.After redirect to the classroom page , teacher click assign material to the class button</td>
+         <td>2.System will pop up a form</td>
+       </tr>
+
+       <tr>
+         <td>3.Teacher fill up the form with title,description(optional) and a pdf file and click assign button</td>
+         <td>4.System will collect the data from form and save this information to the database and show the classroom page with the material</td>
+       </tr>
+
+       <tr>
+         <td>5.Tecaher click invite student button</td>
+         <td>6.System will show a form</td>
+       </tr>
+
+       <tr>
+         <td>7.teacher will complete the form with students email and click on send button</td>
+         <td>8. System will collect the students mails and send them the class code and redirect teacher to classroom page</td>
+       </tr>
+       
+     </table>
+     <br>
+
+     <!-- See tagged question of a particular parts of the material Use case : Teacher -->
+
+     <p>  
+      Use Case: See tagged question of a particular parts of the material
+     <br>Actor: Teacher
+     <br>Type: Primary
+     <br>Typical Course of Events:
+   </p>
+   
+   <table border='1' style='border-collapse:collapse'>
+     <tr>
+       <th>Actor</th>
+       <th>System Response</th>
+     </tr>
+
+     <tr>
+       <td>1.After entering the classroom page the teacher will see his/her recent material and click on a specific material.</td>
+       <td>2.System show the material with information and a pdf file </td>
+     </tr>
+
+     <tr>
+      <td>3. Then the teacher clicks on the pdf file.</td>
+      <td>4.System opens the material in a new tab.</td>
+    </tr>
+
+    <tr>
+      <td>5.Teacher will see some highlight text and click on a highlight text</td>
+      <td>6. System will show the tagged question under the highlight text</td>
+    </tr>
+    </table>
+<br>
+
+<!-- See all question of a page in material Use case : Teacher -->
+
+<p>  
+  Use Case: See all question of a page in material
+ <br>Actor: Teacher
+ <br>Type: Primary
+ <br>Typical Course of Events:
+</p>
+
+<table border='1' style='border-collapse:collapse'>
+ <tr>
+   <th>Actor</th>
+   <th>System Response</th>
+ </tr>
+
+ <tr>
+   <td>1.After entering the classroom page the teacher will see his/her recent material and click on a specific materia</td>
+   <td>2.System show the material with information and a pdf file</td>
+ </tr>
+
+ <tr>
+  <td>3. Then the teacher clicks on the pdf file</td>
+  <td>4.System opens the material in a new tab</td>
+</tr>
+
+<tr>
+  <td>5.Teacher will see all question of a page in the right side of a page</td>
+  <td></td>
+</tr>
+</table>
+<br>
+
+      <!-- Filter Questions-->
+
+      <p>  
+        Use Case: Filter question
+       <br>Actor: Teacher
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+     
+     <table border='1' style='border-collapse:collapse'>
+       <tr>
+         <th>Actor</th>
+         <th>System Response</th>
+       </tr>
+
+       <tr>
+         <td>1.After entering the classroom page the teacher sees his/her recent material and clicks on a specific material.</td>
+         <td>2.System shows the material with information and a pdf file </td>
+       </tr>
+
+       <tr>
+        <td>3. Then the teacher clicks on the pdf file</td>
+        <td>4.System opens the material in a new tab</td>
+      </tr>
+
+      <tr>
+        <td>5.Teacher will see all question of a page in the right side of a page and clicks on the filter question button</td>
+        <td>6.System will show Specific student or all student option</td>
+      </tr>
+
+      <tr>
+        <td>7.Teacher selects option</td>
+        <td>8.System shows the questions according to the option</td>
+      </tr>
+      </table>
+      <br>
+
+      <!-- Reading review-->
+
+      <p>  
+        Use Case: Reading review
+       <br>Actor: Teacher
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+     
+     <table border='1' style='border-collapse:collapse'>
+       <tr>
+         <th>Actor</th>
+         <th>System Response</th>
+       </tr>
+
+       <tr>
+         <td>1.After entering the classroom page the teacher sees his/her recent material and clicks on a specific material.</td>
+         <td>2.System shows the material with information and a pdf file and reading review button.</td>
+       </tr>
+
+       <tr>
+        <td>3. Teacher clicks the reading review button.</td>
+        <td>4. System shows a list of all student</td>
+      </tr>
+
+      <tr>
+        <td>5. Teacher chooses a specific student.</td>
+        <td>6. System opens a material regarding the student. And on this page, the system shows a reel of captured images of the student’s reading time according to the page no of material</td>
+      </tr>
+
+      <tr>
+        <td>7.Teacher reviews and writes a comment against this student.</td>
+        <td>8. System saves this comment into the student’s database also.</td>
+      </tr>
+      </table>
+<br>
+
+<a name="System Feature 2"></a>
+    <h3>4.2 Funtional Requirements 2</h3>
+    <img src="./student use case.jpeg" alt="teacher use case" width="60%" height="60%">
+    <li>Actor: Student
+      <ol type="i">
+        <li> Sign in</li>
+        <li> Sign out</li>
+        <li> Join Classroom</li>
+        <li> Read material</li>
+        <li> See reading task and deadline of a particular class</li>
+        <li> See reading task and deadline as a unified list</li>
+        <li> Add audio question</li>
+        <li> Add question with highlight text</li>
+        <li> Zoom in and zoom out the material</li>
+      </ol>
+    </li>
+<br>
+
+<!--Sign in Use case : Student -->
+
+<p>  
+  Use Case: Sign in
+ <br>Actor: Student
+ <br>Type: Primary
+ <br>Typical Course of Events:
+</p>
+<table border='1' style='border-collapse:collapse'>
+  <tr>
+    <th>Actor</th>
+    <th>System Response</th>
+  </tr>
+  <tr>
+    <td>1.Student opens a browser and enters the particular site</td>
+    <td>2.System shows the sign in interface and prompt to enter email and password.</td>
+  </tr>
+
+  <tr>
+    <td>3.Student enters email and password then clicks on Sign as student button.	</td>
+    <td>4.System authenticate teacher and show homepage</td>
+  </tr> 
+</table>
+
+      <!-- sign out Use case : Student -->
+      <br>
+      <p>  
+        Use Case: Sign out
+       <br>Actor: Student
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+      <table border='1' style='border-collapse:collapse'>
+        <tr>
+          <th>Actor</th>
+          <th>System Response</th>
+        </tr>
+        <tr>
+          <td>1. On the home page student see profile icon and clicks on it.	</td>
+          <td>2.System shows sign out button</td>
+        </tr>
+
+        <tr>
+          <td>3.Student clicks on Sign out  button.	</td>
+          <td>4.System accept the permission and show sign in interface</td>
+        </tr>
+        
+      </table>
+      <br>
+
+       <!--join class Use case : Student -->
+
+       <p>  
+        Use Case: Join Class
+       <br>Actor: Student
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+     
+     <table border='1' style='border-collapse:collapse'>
+       <tr>
+         <th>Actor</th>
+         <th>System Response</th>
+       </tr>
+
+       <tr>
+         <td>1.After successfully signed in, on the home page, the student clicks on the ‘plus button’ to join class.</td>
+         <td>2.System show join class button </td>
+       </tr>
+
+       <tr>
+        <td>3. Then the student clicks on the join class button </td>
+        <td>4.System responds with an open form </td>
+      </tr>
+
+      <tr>
+        <td>5.Student fill up the form with class code and click on join button </td>
+        <td>6.System gets the infos from form ,and find the class according to the class code and join the student with that class and redirect to the homepage with a join class list </td>
+      </tr>
+      </table>
+
+      <!-- See reading material Use case : Student -->
+      <br>
+      <p>  
+        Use Case: See reading material
+       <br>Actor: Student
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+      <table border='1' style='border-collapse:collapse'>
+        <tr>
+          <th>Actor</th>
+          <th>System Response</th>
+        </tr>
+        <tr>
+          <td>1.After successfully joining a classroom, student redirecting to the home page</td>
+          <td>2. System will show student joined classes list in home page</td>
+        </tr>
+
+        <tr>
+          <td>3. Student clicks the go to class button to enter the classroom.</td>
+          <td>4.System will show classroom page with class information</td>
+        </tr>
+
+        <tr>
+          <td>5.After entering the classroom page the student will see his/her recent class material and click on a specific material.</td>
+          <td>6.System show the material with information and a pdf file</td>
+        </tr>
+
+        <tr>
+          <td>7. Then the student clicks on the pdf file</td>
+          <td>8.System opens the material in a new tab.</td>
+        </tr>
+
+        <tr>
+          <td>9.Student  will see the material</td>
+          <td></td>
+        </tr>   
+      </table>
+
+      <!-- See reading task and deadline of a particular class Use case : Student -->
+      <br>
+      <p>  
+        Use Case: See reading task and deadline of a particular class
+       <br>Actor: Student
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+      <table border='1' style='border-collapse:collapse'>
+        <tr>
+          <th>Actor</th>
+          <th>System Response</th>
+        </tr>
+        <tr>
+          <td>1.After successfully joining a classroom, student redirecting to the home page</td>
+          <td>2. System will show student joined classes list in home page</td>
+        </tr>
+
+        <tr>
+          <td>3. Student see a button called Reading Task and deadline then student clicks the button.</td>
+          <td>4.System will  show two option:i)Particular class ii)All class</td>
+        </tr>
+
+        <tr>
+          <td>5.Student choose particular class</td>
+          <td>6.System shows the all joined classroom list</td>
+        </tr>
+
+        <tr>
+          <td>7.  Student choose a specific class</td>
+          <td>8.System open Reading task and deadline page.</td>
+        </tr>
+
+        <tr>
+          <td>9.Student  will see the all reading task with a deadline according to the class</td>
+          <td></td>
+        </tr> 
+      </table>
+
+      <!-- See reading task and deadline as a unified class Use case : Student -->
+      <br>
+      <p>  
+        Use Case: See reading task and deadline as a unified class
+       <br>Actor: Student
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+      <table border='1' style='border-collapse:collapse'>
+        <tr>
+          <th>Actor</th>
+          <th>System Response</th>
+        </tr>
+        <tr>
+          <td>1.After successfully joining a classroom, student redirecting to the home page</td>
+          <td>2. System will show student joined classes list in home page</td>
+        </tr>
+
+        <tr>
+          <td>3. Student see a button called Reading Task and deadline then student clicks the button</td>
+          <td>4.System will  show two option:i)Particular class ii)All class</td>
+        </tr>
+
+        <tr>
+         <td>5.Student choose all class</td>
+         <td>6.System open Reading task and deadline page</td>
+       </tr>
+
+       <tr>
+         <td>7.Student  will see the all reading task with a deadline of all classes</td>
+         <td></td>
+       </tr>   
+      </table>
+
+      <!-- zoom in and out in the material  Use case : Student -->
+      <br>
+      <p>  
+        Use Case: Zoom in and out in the material
+       <br>Actor: Student
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+      <table border='1' style='border-collapse:collapse'>
+        <tr>
+          <th>Actor</th>
+          <th>System Response</th>
+        </tr>
+        <tr>
+          <td>1.After opening the material student sees the material with the zoom in and zoom out button and clicks the zoom in button</td>
+          <td>2. System will zoom in the material.</td>
+        </tr>
+
+        <tr>
+          <td>3.Student clicks zoom out button</td>
+          <td>4.System will zoom out the material</td>
+        </tr>   
+      </table>
+
+      <!-- Add written question Use case : Student -->
+      <br>
+      <p>  
+        Use Case: Add written question 
+       <br>Actor: Student
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+      <table border='1' style='border-collapse:collapse'>
+        <tr>
+          <th>Actor</th>
+          <th>System Response</th>
+        </tr>
+        <tr>
+          <td>1.After opening the material student sees the material with the add question button and clicks on it.</td>
+          <td>2. System will show the option</td>
+        </tr>
+
+        <tr>
+          <td>3.Student choose wrrient question.</td>
+          <td>4.System will pop up a form</td>
+        </tr>
+
+        <tr>
+         <td>5.Student typed the question and clicks submit.</td>
+         <td>6.System collects the data and page no then save the question according to the page no of the material and redirect to the material page.</td>
+       </tr>
+      </table>
+
+      <!-- Add audio question Use case : Student -->
+      <br>
+      <p>  
+        Use Case: Add audio question
+       <br>Actor: Student
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+      <table border='1' style='border-collapse:collapse'>
+        <tr>
+          <th>Actor</th>
+          <th>System Response</th>
+        </tr>
+        <tr>
+          <td>1.After opening the material student sees the material with the add question button and clicks on it</td>
+          <td>2. System will show the option.</td>
+        </tr>
+
+        <tr>
+          <td>3.Student choose audio questions.</td>
+          <td>4.System will pop up a interface with record,stop and submit button</td>
+        </tr>
+
+        <tr>
+         <td>5.Student  clicks on the record button</td>
+         <td>6.System starts recording the question.</td>
+       </tr>
+
+       <tr>
+         <td>7.Student clicks stop button</td>
+         <td>8. System stops the recording</td>
+       </tr>
+
+       <tr>
+         <td>9.Student clicks submit button</td>
+         <td>10.System collect the audio data and page no then save the question according to the page no of the material and redirect to the material page</td>
+       </tr>  
+      </table>
+
+      <!-- Add question with highlight text Use case : Student -->
+      <br>
+      <p>  
+        Use Case: Add question with highlight text
+       <br>Actor: Student
+       <br>Type: Primary
+       <br>Typical Course of Events:
+     </p>
+      <table border='1' style='border-collapse:collapse'>
+        <tr>
+          <th>Actor</th>
+          <th>System Response</th>
+        </tr>
+        <tr>
+          <td>1.After opening the material student sees the material with the add question button and highlights a particular area of material then clicks on the add question button</td>
+          <td>2. System will show the option.</td>
+        </tr>
+
+        <tr>
+          <td>3.Student clicks on an option</td>
+          <td>4.System reacts according to the option.</td>
+        </tr>
+
+        <tr>
+         <td>5.Student clicks submit button</td>
+         <td>6.System collect the data and page no then save the question according to the page no and under the highlighted area of the material and redirect to the material page</td>
+       </tr>      
+      </table>
+
+      <br>
+
+
+
+<a name="System Feature 3"></a>
+    <h3>4.3 Funtional Requirements 3</h3>
+    <img src="./system use case.jpeg" alt="teacher use case" width="60%" height="60%">
+    <li>Actor: System
+      <ol type="i">
+        <li> Display Material</li>
+        <li> Record Written Question</li>
+        <li> Record Audio Question</li>
+        <li> Record Tagged Question in a particular prt of a material</li>
+        <li> Take photograph of students</li>
+        <li> Store images of students</li>
+        <li> Face recognition</li>
+      </ol>
+    </li>
+<br>
+
+<!--  Display Material Use case : system -->
+<br>
+<p>  
+  Use Case: Display Material
+ <br>Actor: System
+ <br>Type: Primary
+ <br>Typical Course of Events:
+</p>
+
+<ul>
+  <li>After teacher successfully assigns a material, students in this class have this material and click on this material. </li>
+  <li>System opens material on the window </li>
+  <li>Student then sees the material. </li>
+</ul>
+
+<!--  Record Text Question Use case : system -->
+
+<br>
+<p>  
+  Use Case: Record Written Question
+ <br>Actor: System
+ <br>Type: Primary
+ <br>Typical Course of Events:
+</p>
+
+<ul>
+  <li>After student clicking on ‘Add Question’ button and choosing ‘Written Question’, system pops-up a form </li>
+  <li>Student filled the blank form and clicks submit button. </li>
+  <li>System collects the data and page no then save the question according to the page no of the material and redirect to the material page </li>
+</ul>
+
+<!--   Record audio question Use case : system -->
+
+<br>
+<p>  
+  Use Case: Record audio question
+ <br>Actor: System
+ <br>Type: Primary
+ <br>Typical Course of Events:
+</p>
+
+<ul>
+  <li>After a student clicks on the ‘Add Question’ button and chooses ‘Audio Question’, the system pops-up a form</li>
+  <li>System will pop up a interface with record,stop and submit button</li>
+  <li>After a student clicks on the ‘Record’ button, System starts recording the question</li>
+  <li>After a student clicks on the ‘Stop’ button, System stops the recording.</li>
+  <li>After a student clicks on the ‘Submit’ button,System collects the audio data and page</li>
+</ul>
+
+<!--  Add question with highlight text Use case : system -->
+
+<br>
+<p>  
+  Use Case: Add question with highlight text
+ <br>Actor: System
+ <br>Type: Primary
+ <br>Typical Course of Events:
+</p>
+
+<ul>
+  <li>After a student highlights a particular area of material then clicks on the add question button and chooses the option then lastly submit the question</li>
+  <li>System collect the data and page no then save the question according to the page no and under the highlighted area of the material and redirect to the material page</li>
+</ul>
+
+<!-- Take photograph of a student Use case : system -->
+
+<br>
+<p>  
+  Use Case: Take photograph of student
+ <br>Actor: System
+ <br>Type: Primary
+ <br>Typical Course of Events:
+</p>
+
+<ul>
+  <li>When a student reads a  page of a material , system continuously takes photos of the student in the background</li>
+  <li>In the background System saves photos into the database according to the page of a material and gives access to the teacher</li>
+</ul>
+
+<!--  Face Recognition Use case : system -->
+
+<br>
+<p>  
+  Use Case: Face Recognition
+ <br>Actor: System
+ <br>Type: Primary
+ <br>Typical Course of Events:
+</p>
+
+<ul>
+  <li>When a student reads a  page of a material , the system also checks his/her identity using the ‘Face Recognition’ feature</li>
+  <li>System saves the information to the database and then sends this information to the teacher</li>
+</ul>
+
+
+
+        
+      </div>
+<div class="w3-container" id="Other Nonfunctional Requirements">
+
+<h1><b>5. Other Nonfunctional Requirements</b></h1>
+    <h5>This section contains non functional requirements.</h5>
+    <a name="Performance Requirements"></a>
+    <h3>5.1 Performance Requirements</h3>
+    <ol>
+      <li>Our system will available all time in all platform</li>
+      <li>Fast user experience</li>
+      <li>The system’s UI is flexible, user-friendly and responsive</li>
+      <li>Software will be test regularly</li>
+      <li>Fast material upload</li>
+      <li>Able to deal with high volume of data.</li>
+      <li>Use of camera.</li>
+      <li>Fast face recognition</li>
+      <li>Cost is low because we use some open source libraries</li>
+    </ol>
+    <br>
+    <a name="Safety Requirements"></a>
+    <h3>5.2 Safety Requirements</h3>
+    <ol>
+      <li>Admin can not see Student and Teacher password</li>
+      <li>Student personal photo will be saved in encrypted form</li>
+      <li>Backup database regularly to get rid of data loss</li>
+    </ol>
+
+    <br>
+    <a name="Security Requirements"></a>
+    <h3>5.3 Security Requirements</h3>
+    <ol>
+      <li>Account security.</li>
+      <li>Password saves in hash format</li>
+      <li>Student photo will not be direct accessible</li>
+      <li>Secure database.</li>
+      <li>Only teacher and student can login.</li>
+    </ol>
+    <br>
+    <a name="Software Quality Attributes"></a>
+    <h3>5.4 Software Quality Attributes</h3>
+    <ol>
+      <li>Internet Connection.</li>
+      <li>Available.</li>
+      <li>Reliable.</li>
+      <li>Maintainable.</li>
+      <li>Effective</li>
+      <li>Technologically advanced.</li>
+      <li>User friendly and organized.</li>
+      <li>Cost efficient.</li>
+    </ol>
+    <a name="Software Quality Attributes"></a>
+    <h3>5.5 Business Rules</h3>
+    <ol>
+     Not Applicable
+    </ol>
+    <br>
+
+</div>
+<div class="w3-container" id="Other Requirements">
+
+  <h1><b>Other Requirements</b></h1>
+  <ol>
+    Not Applicable
+   </ol>
+</div>
+<div class="w3-container" id="Appendix A: Glossary">
+
+    <h1><b>Appendix A: Glossary</b></h1>
+
+    <ol>
+      Not Applicable
+    </ol>
+
+    <a name="Appendix B: Analysis Models"></a>
+    <h1><b>Appendix B: Analysis Models</b></h1>
+    <ol>Not Applicable</ol>
+    <a name="Appendix C: To Be Determined List"></a>
+    <h1><b>Appendix C: To Be Determined List</b></h1>
+    <ol>There is no TBD (to be determined) references</ol>
+    
+</div>
+  </div>
+<script>
+function myAccFunc(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+</script>
+
+</body>
+</html>
